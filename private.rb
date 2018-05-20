@@ -27,26 +27,26 @@ end
 puts '---------------------------------------------------------------'
 puts 'from Reciever'
 puts '---------------------------------------------------------------'
-Receiver.new.public_message
+Receiver.new.public_message # will return 'This is a private message'
 
 begin
-  Receiver.new.self_public_message
+  Receiver.new.self_public_message # will raise error 'private method `private_message' called for  <obj>'
 rescue => e
   puts e
 end
 
 begin
-  Receiver.new.private_message
+  Receiver.new.private_message # will raise error 'private method `private_message' called for  <obj>'
 rescue => e
   puts e
 end
 puts '---------------------------------------------------------------'
 puts 'from R'
 puts '---------------------------------------------------------------'
-R.new.public_message
+R.new.public_message # will return 'This is a private message'
 
 begin
-  R.new.self_public_message
+  R.new.self_public_message # will raise error 'private method `private_message' called for  <obj>'
 rescue => e
   puts e
 end

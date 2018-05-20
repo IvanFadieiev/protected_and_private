@@ -20,14 +20,14 @@ class Mailbox < Receiver
   end
 end
 
-Receiver.new.public_message
+Receiver.new.public_message      # will return 'This is a protected message'
 
-Receiver.new.self_public_message
+Receiver.new.self_public_message # will return 'This is a protected message'
 
-Mailbox.new.mb_public_message
+Mailbox.new.mb_public_message    # will return 'This is a protected message'
 
 begin
-  Receiver.new.protected_message
+  Receiver.new.protected_message # will raise erorr 'protected method `protected_message' called for <obj>'
 rescue => e
   puts e
 end
